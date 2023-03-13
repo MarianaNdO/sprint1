@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Tamanho da sua plantação de alface (m²): <input id="input_tamanho"><br>
+    Receita anual das vendas: <input id="input_receita"><br>
+    <Button onclick="economia()">
+        Economizar
+    </Button>
+
+    <p id="p_pagina">
+       <b style="color:brown"> Cerca de R$ são desperdiçados por ano por causa do deficit de iluminação nas plantações de alface. </style><br>
+       
+    </p>
+    
+</body>
+</html>
+
+<script>
+    function economia() {
+        var tamanho = Number(input_tamanho.value)
+        var receita = Number(input_receita.value)
+        var alfaces = tamanho * 10
+        var lucro = alfaces - (alfaces * 0.5)
+        var TOTAL = receita + (lucro*12)
+
+
+
+        p_pagina.innerHTML += ` <br> Em média são plantados 10 alfaces por m². As iluminação pode aumentar até em em 50% o rendimento da sua plantação. <br> Com o Leaf Project, você terá <b style="color:green"> R$ ${lucro} </b> a mais de vendas, e o total de <b style="color:green"> R$${TOTAL} </b> de receita anual! </b>`
+    }
+</script>
